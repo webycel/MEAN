@@ -1,0 +1,13 @@
+.post {
+    margin-bottom: 7px;
+}
+.post .glyphicon {
+    margin-right: 6px;
+}
+.post .glyphicon:hover {
+    text-decoration: none;
+}
+
+.form {
+    margin-top: 40px;
+}

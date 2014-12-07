@@ -25,4 +25,17 @@ describe('MainCtrl', function(){
     	}
     });
 
+    it('should add a new post with 0 upvotes', function() {
+    	var post_length = scope.posts.length;
+    	scope.addPost();
+    	expect(scope.posts.length).toBe(post_length + 1);
+    	expect(scope.posts[5].upvotes).toBe(0);
+    });
+
+    it('should increment upvotes', function() {
+    	var post = { title: 'Post 1', upvotes: 0 };
+    	scope.incrementUpvotes(post);
+    	expect(post.upvotes).toBe(1);
+    });
+
 });
