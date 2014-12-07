@@ -1,12 +1,15 @@
 <html>
     <head>
         <title>Anewsing</title>
+
+        <style type="text/css" src="css/normalize.css"></style>
+        <style type="text/css" src="css/styles.css"></style>
     </head>    
 
     <body ng-app="anewsing" ng-controller="MainCtrl">
 
-        <div>
-            {{test}}
+        <div ng-repeat="post in posts | orderBy: '-upvotes'">
+            {{post.title}} - upvotes: {{post.upvotes}}
         </div>
 
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>

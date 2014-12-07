@@ -16,8 +16,13 @@ describe('MainCtrl', function(){
 
     // tests start here
 
-    it('should have variable test = "Hello anewsing world!"', function() {
-    	expect(scope.test).toBe('Hello anewsing world!')
+    it('should fetch list of posts', function() {
+    	expect(scope.posts.length).toBe(5);
+    	expect(scope.posts[0].title).toBe('post 1');
+
+    	for(var i in scope.posts) {
+    		expect(scope.posts[i].upvotes >= 0).toBeTruthy();
+    	}
     });
 
 });
