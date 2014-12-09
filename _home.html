@@ -1,0 +1,26 @@
+<header>
+    <h1>Anewsing</h1>
+</header>
+
+<article class="post" ng-repeat="post in posts | orderBy: '-upvotes'">
+    <a href="" ng-click="incrementUpvotes(post)" class="glyphicon glyphicon-thumbs-up"></a>
+    <span class="post-upvotes">{{post.upvotes}}</span>
+    <a href="{{post.link}}" target="_blank" ng-show="post.link">{{post.title}}</a> 
+    <span ng-hide="post.link">{{post.title}}</span>
+    <span>
+        - <a href="#/posts/{{$index}}">Comments</a> ({{post.comments.length || 0}})
+    </span>
+</article>
+
+<div class="row">
+    <form class="col-md-8 form" ng-submit="addPost()">
+
+        <h3>Add a new post</h3>
+        
+        <input type="text" ng-model="title" class="form-control" placeholder="title" required /><br>
+        <input type="url" ng-model="link" class="form-control" placeholder="link" /><br>
+
+        <button type="submit" class="btn btn-primary">Post it</button>
+
+    </form>
+</div>

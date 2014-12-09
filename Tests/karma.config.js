@@ -18,6 +18,7 @@ module.exports = function(config) {
       '../js/*.js',
       '../js/**.*.js',
       'angular-mocks.js',
+      'angular-ui-router.js',
       '**/*.tests.js'
     ],
 
